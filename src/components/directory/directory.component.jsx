@@ -47,8 +47,8 @@ class Directory extends React.Component {
 
   render () {
     return <div className='directory-menu'>
-      {this.state.sections.map(({ id, title, imageUrl, size }) => (
-      <MenuItem key={id} title={title.toUpperCase()} imageUrl={imageUrl} size={size}></MenuItem>
+      {this.state.sections.map(({ id, ...otherSectionProps }) => ( // ..sectionProps are destructured and passwed forward, id not required to pass
+      <MenuItem key={id} {...otherSectionProps}></MenuItem> // every other key value par kets passed as keyValuePairName={keyValuePairName}
       )
       )}
     </div>
