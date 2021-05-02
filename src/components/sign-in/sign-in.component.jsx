@@ -31,12 +31,14 @@ class SignIn extends React.Component {
     return (
       <div className='sign-in'>
         <h2>I already have an account</h2>
-        <span>Sign in with your wmail and password</span>
+        <span>Sign in with your email and password</span>
         <form onSubmit={this.handleSubmit}>
           <FormInput name='email' type='email' value={ this.state.email } handleChange={ this.handleChange } label='email' required />
           <FormInput name='password' type='password' value={ this.state.password } handleChange={ this.handleChange } label='password' required />
-          <CustomButton type="submit" value='Submit Form'>Sign in</CustomButton>
-          <CustomButton onClick={signInWithGoogle}>Sign in with Google</CustomButton>
+          <div className='buttons'>
+            <CustomButton type="submit" value='Submit Form'>Sign in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn >Sign in with Google</CustomButton>
+          </div>
         </form>
       </div>
     )
