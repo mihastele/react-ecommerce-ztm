@@ -1,20 +1,19 @@
-import { userActionTypes } from './user.types'
+import { UserActionTypes } from './user.types';
 
 const INITIAL_STATE = {
   currentUser: null
-}
+};
 
-// state = INITIAL_STATE -> ES6 feature to pass intiial value
 const userReducer = (state = INITIAL_STATE, action) => {
-  switch(action.type) {
-    case userActionTypes.SET_CURRENT_USER:
+  switch (action.type) {
+    case UserActionTypes.SET_CURRENT_USER:
       return {
         ...state,
-        currentUser : action.payload
-      }
+        currentUser: action.payload
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default userReducer
+export default userReducer;
